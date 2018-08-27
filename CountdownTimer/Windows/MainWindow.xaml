@@ -28,14 +28,6 @@
         <KeyBinding Command="local:TimerWindow.EscapeCommand" Gesture="Esc"/>
         <KeyBinding Command="local:TimerWindow.FullScreenCommand"  Gesture="Alt+Enter" />
     </Window.InputBindings>
-    <!--<Window.ContextMenu>
-        <ContextMenu>
-            <MenuItem Header="View Fullscreen" />
-            <MenuItem Header="Options"/>
-            <MenuItem Header="Check For Updates" Icon=""/>
-            <MenuItem Header="About Developer" Icon="info.png"/>
-        </ContextMenu>
-    </Window.ContextMenu>-->
     <Window.TaskbarItemInfo>
         <TaskbarItemInfo/>
     </Window.TaskbarItemInfo>
@@ -79,7 +71,7 @@
                 <Button Content="Reset" x:Name="ResetButton" Command="local:TimerWindow.ResetCommand" VerticalAlignment="Top" Width="85" Height="24" Margin="5,0" HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <RadioButton x:Name="FourMinuteSelect" Tag="00:10" Checked="TimerradioButton_Checked" Content="4 Minutes" Margin="5,0,4,0" VerticalAlignment="Center" HorizontalAlignment="Center" IsChecked="True"/>
+                <RadioButton x:Name="FourMinuteSelect" Tag="04:00" Checked="TimerradioButton_Checked" Content="4 Minutes" Margin="5,0,4,0" VerticalAlignment="Center" HorizontalAlignment="Center" IsChecked="True"/>
                 <RadioButton x:Name="FiveMinuteSelect" Tag="05:00" Checked="TimerradioButton_Checked" Content="5 Minutes" Margin="5,0,4,0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </StackPanel>
         </StackPanel>
