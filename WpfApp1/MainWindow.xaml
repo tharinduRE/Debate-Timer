@@ -1,0 +1,51 @@
+﻿<Window x:Class="CountdownTimer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CountdownTimer"
+        mc:Ignorable="d"
+        Title="CountDown Timer" Height="512" Width="854" MinWidth="854" MinHeight="512" HorizontalAlignment="Center" VerticalAlignment="Center" Background="White" Icon="selftimer_23693.ico" WindowStartupLocation="CenterScreen">
+    <Window.ContextMenu>
+        <ContextMenu>
+            <MenuItem Header="View Fullscreen" Click="MenuItemFullscreen_Click"/>
+            <MenuItem Header="Options"/>
+            <MenuItem Header="Check For Updates"/>
+            <MenuItem Header="About Developer" Click="MenuItem_Click"/>
+        </ContextMenu>
+    </Window.ContextMenu>
+
+
+    <Grid Margin="0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35*" />
+            <RowDefinition Height="329*" />
+            <RowDefinition Height="60*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="171.576,0,171.576,326.152" MaxWidth="1366" MinWidth="532" >
+            <Image Source="header-v1-01.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,5,0,0"/>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,44.95">
+            <Viewbox HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Label x:Name="lblClockTime" Content="00:00" HorizontalAlignment="Center" Margin="8,0" VerticalAlignment="Center" FontWeight="Bold" Foreground="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="3,0" />
+            </Viewbox>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Height="24" Margin="0,17,0,19">
+            
+            <Button Content="&#9654;" x:Name="btnStart" HorizontalAlignment="Left" VerticalAlignment="Top" Width="85" Height="24" Click="BtnStart_click" Margin="5,0" Padding="1" />
+            <Button Content="Stop" x:Name="btnStop" HorizontalAlignment="Left" VerticalAlignment="Top" Width="85" Height="24" Click="BtnStart_click" Margin="5,0" Padding="1" />
+            <Button Content="Reset" x:Name="btnReset"  VerticalAlignment="Top" Width="85" Height="24" Margin="5,0" HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
+            <RadioButton Content="4 Minute" Margin="5,0,4,0" VerticalAlignment="Center" HorizontalAlignment="Center" IsChecked="True"/>
+            <RadioButton Content="5 Minute" Margin="5,0,4,0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </StackPanel>
+
+
+    </Grid>
+</Window>
