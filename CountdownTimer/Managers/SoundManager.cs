@@ -57,7 +57,7 @@ namespace Hourglass.Managers
         /// </summary>
         public Sound DefaultSound
         {
-            get { return this.GetSoundByIdentifier("resource:Normal beep"); }
+            get { return this.GetSoundByIdentifier("resource:Desk Bell"); }
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace Hourglass.Managers
                 return null;
             }
 
-            return this.sounds.FirstOrDefault(s => s.Identifier == identifier);
+            return this.sounds.FirstOrDefault(s => s.Name == identifier);
         }
 
         /// <summary>
@@ -168,6 +168,12 @@ namespace Hourglass.Managers
         {
             return new List<Sound>
             {
+                new Sound(
+                    "Desk Bell",
+                    Resources.SoundManagerDeskBell,
+                    () => Resources.DeskBellSound,
+                    TimeSpan.FromMilliseconds(1200)),
+
                 new Sound(
                     "Loud beep",
                     Resources.SoundManagerLoudBeep,

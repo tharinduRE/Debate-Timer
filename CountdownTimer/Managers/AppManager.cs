@@ -28,11 +28,11 @@ namespace Hourglass.Managers
             UpdateManager.Instance,
             //KeepAwakeManager.Instance,
             //WakeUpManager.Instance,
-            //NotificationAreaIconManager.Instance,
+            NotificationAreaIconManager.Instance,
             //ThemeManager.Instance,
             SoundManager.Instance,
             TimerStartManager.Instance,
-            //TimerOptionsManager.Instance,
+            TimerOptionsManager.Instance,
             TimerManager.Instance
         };
 

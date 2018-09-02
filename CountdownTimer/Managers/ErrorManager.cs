@@ -15,8 +15,8 @@ namespace Hourglass.Managers
     using System.Windows;
 
     using Hourglass.Extensions;
-    using Hourglass.Properties;
-    using Hourglass.Windows;
+    using CountdownTimer.Properties;
+    using CountdownTimer.Windows;
 
     /// <summary>
     /// Manages global errors.

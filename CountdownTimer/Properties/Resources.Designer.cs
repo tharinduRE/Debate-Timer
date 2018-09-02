@@ -840,6 +840,15 @@ namespace CountdownTimer.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream DeskBellSound {
+            get {
+                return ResourceManager.GetStream("DeskBellSound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to _Close.
         /// </summary>
         internal static string ErrorDialogCloseButtonContent {
@@ -1291,6 +1300,15 @@ namespace CountdownTimer.Properties {
         internal static string RelativeDateTokenTomorrowPattern {
             get {
                 return ResourceManager.GetString("RelativeDateTokenTomorrowPattern", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Desk Bell.
+        /// </summary>
+        internal static string SoundManagerDeskBell {
+            get {
+                return ResourceManager.GetString("SoundManagerDeskBell", resourceCulture);
             }
         }
         
@@ -2203,8 +2221,7 @@ namespace CountdownTimer.Properties {
         ///            )?
         ///        )
         ///        |
-        ///        (
-        ///            (?&lt;weeks&gt;\d+| [rest of string was truncated]&quot;;.
+        ///        ( [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string TimeSpanTokenLongFormPattern {
             get {
@@ -2351,7 +2368,7 @@ namespace CountdownTimer.Properties {
         ///        &quot;7:30:00&quot;               count down for 7 hours 30 minutes
         ///        &quot;5 minutes&quot;             count down for 5 minutes
         ///        &quot;5 minutes 30 seconds&quot;  count down for 5 minutes 30 seconds
-        ///        &quot;7 hours 30 minutes&quot;    count down for 7 ho [rest of string was truncated]&quot;;.
+        ///        &quot;7 hours 30 minutes&quot;    count d [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Usage {
             get {

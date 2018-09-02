@@ -11,6 +11,7 @@ namespace Hourglass.Timing
     using System.Reflection;
 
     using Hourglass.Managers;
+    using CountdownTimer.Properties;
 
     /// <summary>
     /// A sound that can be used to notify the user that a timer has expired.
@@ -101,9 +102,9 @@ namespace Hourglass.Timing
             this.duration = duration;
         }
 
-        /// <summary>
-        /// Gets the default sound.
-        /// </summary>
+        ///// <summary>
+        ///// Gets the default sound.
+        ///// </summary>
         public static Sound DefaultSound
         {
             get { return SoundManager.Instance.DefaultSound; }

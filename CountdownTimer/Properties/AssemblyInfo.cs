@@ -7,12 +7,12 @@ using System.Windows;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("CountdownTimer")]
-[assembly: AssemblyDescription("A Timer Clock for Specific Use case")]
+[assembly: AssemblyTitle("Debate Timer")]
+[assembly: AssemblyDescription("A Timer Clock for Debate Competition")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Tharindu RE")]
-[assembly: AssemblyProduct("CountdownTimer")]
-[assembly: AssemblyCopyright("Copyright ©  2018")]
+[assembly: AssemblyProduct("Debate Timer")]
+[assembly: AssemblyCopyright("Copyright © 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
