@@ -22,7 +22,7 @@
         <CommandBinding Command="local:TimerWindow.FullScreenCommand" Executed="FullScreenCommandExecuted"/>
     </Window.CommandBindings>
     <Window.InputBindings>
-        <KeyBinding Command="local:TimerWindow.PauseResumeCommand" Gesture="Space"/>
+        <!--<KeyBinding Command="local:TimerWindow.PauseResumeCommand" Gesture="Space"/>-->
         <KeyBinding Command="local:TimerWindow.PauseResumeCommand" Gesture="Ctrl+P"/>
         <KeyBinding Command="local:TimerWindow.StopCommand" Gesture="Ctrl+S"/>
         <KeyBinding Command="local:TimerWindow.EscapeCommand" Gesture="Esc"/>
@@ -71,7 +71,7 @@
                 <Button Content="Reset" x:Name="ResetButton" Command="local:TimerWindow.ResetCommand" VerticalAlignment="Top" Width="85" Height="24" Margin="5,0" HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <RadioButton x:Name="FourMinuteSelect" Tag="04:00" Checked="TimerradioButton_Checked" Content="4 Minutes" Margin="5,0,4,0" VerticalAlignment="Center" HorizontalAlignment="Center" IsChecked="True"/>
+                <RadioButton x:Name="FourMinuteSelect" Tag="00:10" Checked="TimerradioButton_Checked" Content="4 Minutes" Margin="5,0,4,0" VerticalAlignment="Center" HorizontalAlignment="Center" IsChecked="True"/>
                 <RadioButton x:Name="FiveMinuteSelect" Tag="05:00" Checked="TimerradioButton_Checked" Content="5 Minutes" Margin="5,0,4,0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </StackPanel>
         </StackPanel>

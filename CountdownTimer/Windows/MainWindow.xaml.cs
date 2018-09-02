@@ -5,12 +5,14 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 using System.Windows.Shell;
 
 using Hourglass.Extensions;
 using Hourglass.Managers;
-using Hourglass.Timing;
 using CountdownTimer.Properties;
+using Hourglass.Timing;
+
 
 namespace CountdownTimer.Windows
 {
@@ -142,10 +144,10 @@ namespace CountdownTimer.Windows
 
         public TimerWindow()
         {
-            InitializeComponent();
-            InitializeResources();
+            this.InitializeComponent();
+            this.InitializeResources();
             //this.InitializeAnimations();
-            InitializeSoundPlayer();
+            this.InitializeSoundPlayer();
             //this.InitializeUpdateButton();
 
             this.BindTimer();
@@ -153,6 +155,7 @@ namespace CountdownTimer.Windows
 
             this.menu.Bind(this /* window */);
 
+            AppManager.Instance.Initialize();
             TimerManager.Instance.Add(this.Timer);
 
         }
@@ -729,11 +732,11 @@ namespace CountdownTimer.Windows
         /// <param name="e">The event data.</param>
         private void SoundPlayerPlaybackCompleted(object sender, EventArgs e)
         {
-            if (!this.Options.LoopTimer && this.Mode == TimerWindowMode.Status)
-            {
-                this.Close();
+            //if (!this.Options.LoopTimer && this.Mode == TimerWindowMode.Status)
+            //{
+            //    this.Close();
                 
-            }
+            //}
         }
 
         #endregion
@@ -944,7 +947,7 @@ namespace CountdownTimer.Windows
         /// <param name="e">The event data.</param>
         private void TimerStarted(object sender, EventArgs e)
         {
-            // Do nothing
+            this.BeginExpirationSound();
         }
 
         /// <summary>
@@ -984,7 +987,7 @@ namespace CountdownTimer.Windows
         /// <param name="e">The event data.</param>
         private void TimerExpired(object sender, EventArgs e)
         {
-            this.BeginExpirationAnimationAndSound();
+            this.BeginExpirationSound();
         }
 
         /// <summary>
@@ -995,6 +998,8 @@ namespace CountdownTimer.Windows
         private void TimerTick(object sender, EventArgs e)
         {
             // Do nothing
+            this.TimerBellring();
+            
         }
 
         /// <summary>
@@ -1005,6 +1010,21 @@ namespace CountdownTimer.Windows
         private void TimerPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             this.UpdateBoundControls();
+        }
+
+        /// <summary>
+        /// Invoked when timer has certain Elapsed Values.
+        /// </summary>
+        private void TimerBellring()
+        {
+            if (Timer.TimeElapsedAsString == "00:05" && this.timerValue == "00:10")
+            {
+                this.BeginExpirationSound();
+            }
+            if (Timer.TimeElapsedAsString == "01:00" && this.timerValue == "05:00")
+            {
+                this.BeginExpirationSound();
+            }
         }
 
         #endregion
@@ -1193,11 +1213,11 @@ namespace CountdownTimer.Windows
                         Properties.Resources.TimerWindowCouldNotLaunchWebBrowserErrorMessage,
                         updateUri);
 
-                   /* ErrorDialog dialog = new ErrorDialog();
-                    dialog.ShowDialog(
-                        title: Properties.Resources.TimerWindowCouldNotLaunchWebBrowserErrorTitle,
-                        message: message,
-                        details: ex.ToString());*/
+                    //ErrorDialog dialog = new ErrorDialog();
+                    //dialog.ShowDialog(
+                    //    title: Properties.Resources.TimerWindowCouldNotLaunchWebBrowserErrorTitle,
+                    //    message: message,
+                    //    details: ex.ToString());
                 }
             }
         }
@@ -1296,11 +1316,11 @@ namespace CountdownTimer.Windows
         /// <param name="e">The event data.</param>
         private void WindowMouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (e.OriginalSource is Panel)
-            {
-                this.CancelOrReset();
-                e.Handled = true;
-            }
+            //if (e.OriginalSource is Panel)
+            //{
+            //    this.CancelOrReset();
+            //    e.Handled = true;
+            //}
         }
 
         /// <summary>
@@ -1378,6 +1398,17 @@ namespace CountdownTimer.Windows
         }
         #endregion
 
+        #region Window (exit)
+        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
+        {
+            AppManager.Instance.Persist();
+            AppManager.Instance.Dispose();
+            // Shutdown the application.
+            Application.Current.Shutdown();
+            // OR You can Also go for below logic
+            // Environment.Exit(0);
+        } 
+        #endregion
     }
 
 }

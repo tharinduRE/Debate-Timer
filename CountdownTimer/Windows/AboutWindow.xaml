@@ -7,10 +7,25 @@
         mc:Ignorable="d"
         Title="About Debate Timer" Height="320" Width="540" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" ShowInTaskbar="False">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="179*"/>
+            <RowDefinition Height="74*"/>
+            <RowDefinition Height="38*"/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource=" ../Resources/about-bg-01.png"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="101*"/>
-            <ColumnDefinition Width="166*"/>
+            <ColumnDefinition Width="145*"/>
+            <ColumnDefinition Width="244*"/>
+            <ColumnDefinition Width="145*"/>
         </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Horizontal"  Grid.Column="1" Grid.Row="1" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock HorizontalAlignment="Center"  TextWrapping="Wrap" Text="Debate Timer" VerticalAlignment="Center" FontFamily="Segoe UI Light" Foreground="White" FontSize="24" />
+            <Label Content="Version 1.0.8" Foreground="White" Margin="14,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+        </StackPanel>
+        <TextBlock HorizontalAlignment="Center" Margin="0,59,127.316,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Center" Foreground="White" Grid.RowSpan="2" TextAlignment="Center" Height="39.038" Grid.ColumnSpan="2" Grid.Column="1"><Run Text="Designed &amp; Developed by TharinduRE."/><LineBreak/><Run Text="Copyrights 2018 . All rights Reserved. MIT License"/></TextBlock>
+        <Rectangle Grid.ColumnSpan="3" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="1" Margin="21.667,56.962,0,0" Grid.Row="1" VerticalAlignment="Top" Width="489"/>
 
     </Grid>
 </Window>

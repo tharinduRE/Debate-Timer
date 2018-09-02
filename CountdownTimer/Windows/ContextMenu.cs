@@ -67,69 +67,24 @@ namespace CountdownTimer.Windows
         private MenuItem showInNotificationAreaMenuItem;
 
         /// <summary>
-        /// The "About Menu Item" <see cref="MenuItem"/>.
-        /// </summary>
-        private MenuItem AboutMenuItem;
-
-        /// <summary>
-        /// The "Loop timer" <see cref="MenuItem"/>.
-        /// </summary>
-        private MenuItem loopTimerMenuItem;
-
-        /// <summary>
-        /// The "Pop up when expired" <see cref="MenuItem"/>.
-        /// </summary>
-        private MenuItem popUpWhenExpiredMenuItem;
-
-        /// <summary>
-        /// The "Close when expired" <see cref="MenuItem"/>.
-        /// </summary>
-        private MenuItem closeWhenExpiredMenuItem;
-
-        /// <summary>
-        /// The "Recent inputs" <see cref="MenuItem"/>.
-        /// </summary>
-        private MenuItem recentInputsMenuItem;
-
-        /// <summary>
-        /// The "Clear recent inputs" <see cref="MenuItem"/>.
-        /// </summary>
-        private MenuItem clearRecentInputsMenuItem;
-
-        /// <summary>
-        /// The "Saved timers" <see cref="MenuItem"/>.
-        /// </summary>
-        private MenuItem savedTimersMenuItem;
-
-        /// <summary>
-        /// The "Open all saved timers" <see cref="MenuItem"/>.
-        /// </summary>
-        private MenuItem openAllSavedTimersMenuItem;
-
-        /// <summary>
-        /// The "Clear saved timers" <see cref="MenuItem"/>.
-        /// </summary>
-        private MenuItem clearSavedTimersMenuItem;
-
-        /// <summary>
         /// The "Theme" <see cref="MenuItem"/>.
         /// </summary>
         private MenuItem themeMenuItem;
 
-        /// <summary>
-        /// The "Light theme" <see cref="MenuItem"/>.
-        /// </summary>
-        private MenuItem lightThemeMenuItem;
+        ///// <summary>
+        ///// The "Light theme" <see cref="MenuItem"/>.
+        ///// </summary>
+        //private MenuItem lightThemeMenuItem;
 
-        /// <summary>
-        /// The "Dark theme" <see cref="MenuItem"/>.
-        /// </summary>
-        private MenuItem darkThemeMenuItem;
+        ///// <summary>
+        ///// The "Dark theme" <see cref="MenuItem"/>.
+        ///// </summary>
+        //private MenuItem darkThemeMenuItem;
 
-        /// <summary>
-        /// The "Manage themes" <see cref="MenuItem"/>.
-        /// </summary>
-        private MenuItem manageThemesMenuItem;
+        ///// <summary>
+        ///// The "Manage themes" <see cref="MenuItem"/>.
+        ///// </summary>
+        //private MenuItem manageThemesMenuItem;
 
         /// <summary>
         /// The "Theme" <see cref="MenuItem"/>s associated with <see cref="Theme"/>s.
@@ -152,79 +107,9 @@ namespace CountdownTimer.Windows
         private MenuItem loopSoundMenuItem;
 
         /// <summary>
-        /// The "Advanced options" <see cref="MenuItem"/>.
+        /// The "About Menu Item" <see cref="MenuItem"/>.
         /// </summary>
-        private MenuItem advancedOptionsMenuItem;
-
-        /// <summary>
-        /// The "Do not keep computer awake" <see cref="MenuItem"/>.
-        /// </summary>
-        private MenuItem doNotKeepComputerAwakeMenuItem;
-
-        /// <summary>
-        /// The "Open saved timers on startup" <see cref="MenuItem"/>.
-        /// </summary>
-        private MenuItem openSavedTimersOnStartupMenuItem;
-
-        /// <summary>
-        /// The "Show time elapsed" <see cref="MenuItem"/>.
-        /// </summary>
-        private MenuItem showTimeElapsedMenuItem;
-
-        /// <summary>
-        /// The "Shut down when expired" <see cref="MenuItem"/>.
-        /// </summary>
-        private MenuItem shutDownWhenExpiredMenuItem;
-
-        /// <summary>
-        /// The "Window title" <see cref="MenuItem"/>.
-        /// </summary>
-        private MenuItem windowTitleMenuItem;
-
-        /// <summary>
-        /// The "Application name" window title <see cref="MenuItem"/>.
-        /// </summary>
-        private MenuItem applicationNameWindowTitleMenuItem;
-
-        /// <summary>
-        /// The "Time left" window title <see cref="MenuItem"/>.
-        /// </summary>
-        private MenuItem timeLeftWindowTitleMenuItem;
-
-        /// <summary>
-        /// The "Time elapsed" window title <see cref="MenuItem"/>.
-        /// </summary>
-        private MenuItem timeElapsedWindowTitleMenuItem;
-
-        /// <summary>
-        /// The "Timer title" window title <see cref="MenuItem"/>.
-        /// </summary>
-        private MenuItem timerTitleWindowTitleMenuItem;
-
-        /// <summary>
-        /// The "Timer title + time left" window title <see cref="MenuItem"/>.
-        /// </summary>
-        private MenuItem timerTitlePlusTimeLeftWindowTitleMenuItem;
-
-        /// <summary>
-        /// The "Timer title + time elapsed" window title <see cref="MenuItem"/>.
-        /// </summary>
-        private MenuItem timerTitlePlusTimeElapsedWindowTitleMenuItem;
-
-        /// <summary>
-        /// The "Time left + timer title" window title <see cref="MenuItem"/>.
-        /// </summary>
-        private MenuItem timeLeftPlusTimerTitleWindowTitleMenuItem;
-
-        /// <summary>
-        /// The "Time elapsed + timer title" window title <see cref="MenuItem"/>.
-        /// </summary>
-        private MenuItem timeElapsedPlusTimerTitleWindowTitleMenuItem;
-
-        /// <summary>
-        /// The "Window title" <see cref="MenuItem"/>s associated with <see cref="WindowTitleMode"/>s.
-        /// </summary>
-        private IList<MenuItem> selectableWindowTitleMenuItems;
+        private MenuItem AboutMenuItem;
 
         /// <summary>
         /// The "Close" <see cref="MenuItem"/>.
@@ -283,7 +168,7 @@ namespace CountdownTimer.Windows
 
             this.selectableThemeMenuItems = new List<MenuItem>();
             this.selectableSoundMenuItems = new List<MenuItem>();
-            this.selectableWindowTitleMenuItems = new List<MenuItem>();
+            //this.selectableWindowTitleMenuItems = new List<MenuItem>();
 
             // Build the menu
             this.BuildMenu();
@@ -370,55 +255,6 @@ namespace CountdownTimer.Windows
             // Show in notification area
             this.showInNotificationAreaMenuItem.IsChecked = Settings.Default.ShowInNotificationArea;
 
-            //// Loop timer
-            //if (this.timerWindow.Timer.SupportsLooping)
-            //{
-            //    this.loopTimerMenuItem.IsEnabled = true;
-            //    this.loopTimerMenuItem.IsChecked = this.timerWindow.Options.LoopTimer;
-            //}
-            //else
-            //{
-            //    this.loopTimerMenuItem.IsEnabled = false;
-            //    this.loopTimerMenuItem.IsChecked = false;
-            //}
-
-            // Pop up when expired
-            //this.popUpWhenExpiredMenuItem.IsChecked = this.timerWindow.Options.PopUpWhenExpired;
-
-            //// Close when expired
-            //if ((!this.timerWindow.Options.LoopTimer || !this.timerWindow.Timer.SupportsLooping) && !this.timerWindow.Options.LoopSound)
-            //{
-            //    this.closeWhenExpiredMenuItem.IsChecked = this.timerWindow.Options.CloseWhenExpired;
-            //    this.closeWhenExpiredMenuItem.IsEnabled = true;
-            //}
-            //else
-            //{
-            //    this.closeWhenExpiredMenuItem.IsChecked = false;
-            //    this.closeWhenExpiredMenuItem.IsEnabled = false;
-            //}
-
-            //// Theme
-            //foreach (MenuItem menuItem in this.selectableThemeMenuItems)
-            //{
-            //    Theme menuItemTheme = (Theme)menuItem.Tag;
-            //    menuItem.IsChecked = menuItemTheme == this.timerWindow.Options.Theme;
-            //    if (this.timerWindow.Options.Theme.Type == ThemeType.UserProvided)
-            //    {
-            //        menuItem.Visibility = menuItemTheme.Type == ThemeType.BuiltInLight || menuItemTheme.Type == ThemeType.UserProvided
-            //            ? Visibility.Visible
-            //            : Visibility.Collapsed;
-            //    }
-            //    else
-            //    {
-            //        menuItem.Visibility = menuItemTheme.Type == this.timerWindow.Options.Theme.Type || menuItemTheme.Type == ThemeType.UserProvided
-            //            ? Visibility.Visible
-            //            : Visibility.Collapsed;
-            //    }
-            //}
-
-            //this.lightThemeMenuItem.IsChecked = this.timerWindow.Options.Theme.Type == ThemeType.BuiltInLight;
-            //this.darkThemeMenuItem.IsChecked = this.timerWindow.Options.Theme.Type == ThemeType.BuiltInDark;
-
             // Sound
             foreach (MenuItem menuItem in this.selectableSoundMenuItems)
             {
@@ -449,21 +285,6 @@ namespace CountdownTimer.Windows
 
             // Show in notification area
             Settings.Default.ShowInNotificationArea = this.showInNotificationAreaMenuItem.IsChecked;
-
-            //// Loop timer
-            //if (this.loopTimerMenuItem.IsEnabled)
-            //{
-            //    this.timerWindow.Options.LoopTimer = this.loopTimerMenuItem.IsChecked;
-            //}
-
-            //// Pop up when expired
-            //this.timerWindow.Options.PopUpWhenExpired = this.popUpWhenExpiredMenuItem.IsChecked;
-
-            //// Close when expired
-            //if (this.closeWhenExpiredMenuItem.IsEnabled)
-            //{
-            //    this.timerWindow.Options.CloseWhenExpired = this.closeWhenExpiredMenuItem.IsChecked;
-            //}
 
             // Sound
             MenuItem selectedSoundMenuItem = this.selectableSoundMenuItems.FirstOrDefault(mi => mi.IsChecked);
@@ -539,97 +360,26 @@ namespace CountdownTimer.Windows
             this.showInNotificationAreaMenuItem.Click += this.CheckableMenuItemClick;
             this.Items.Add(this.showInNotificationAreaMenuItem);
 
-            //this.Items.Add(new Separator());
-
-            //// Loop timer
-            //this.loopTimerMenuItem = new MenuItem();
-            //this.loopTimerMenuItem.Header = Properties.Resources.ContextMenuLoopTimerMenuItem;
-            //this.loopTimerMenuItem.IsCheckable = true;
-            //this.loopTimerMenuItem.Click += this.CheckableMenuItemClick;
-            //this.Items.Add(this.loopTimerMenuItem);
-
-            //// Pop up when expired
-            //this.popUpWhenExpiredMenuItem = new MenuItem();
-            //this.popUpWhenExpiredMenuItem.Header = Properties.Resources.ContextMenuPopUpWhenExpiredMenuItem;
-            //this.popUpWhenExpiredMenuItem.IsCheckable = true;
-            //this.popUpWhenExpiredMenuItem.Click += this.CheckableMenuItemClick;
-            //this.Items.Add(this.popUpWhenExpiredMenuItem);
-
-            //// Close when expired
-            //this.closeWhenExpiredMenuItem = new MenuItem();
-            //this.closeWhenExpiredMenuItem.Header = Properties.Resources.ContextMenuCloseWhenExpiredMenuItem;
-            //this.closeWhenExpiredMenuItem.IsCheckable = true;
-            //this.closeWhenExpiredMenuItem.Click += this.CheckableMenuItemClick;
-            //this.Items.Add(this.closeWhenExpiredMenuItem);
-
-            //this.Items.Add(new Separator());
-
-            //// Recent inputs
-            //this.recentInputsMenuItem = new MenuItem();
-            //this.recentInputsMenuItem.Header = Properties.Resources.ContextMenuRecentInputsMenuItem;
-            //this.Items.Add(this.recentInputsMenuItem);
-
-            //// Saved timers
-            //this.savedTimersMenuItem = new MenuItem();
-            //this.savedTimersMenuItem.Header = Properties.Resources.ContextMenuSavedTimersMenuItem;
-            //this.Items.Add(this.savedTimersMenuItem);
-
             this.Items.Add(new Separator());
 
-            //// Theme
-            //this.themeMenuItem = new MenuItem();
-            //this.themeMenuItem.Header = Properties.Resources.ContextMenuThemeMenuItem;
-            //this.Items.Add(this.themeMenuItem);
+            // Theme
+            this.themeMenuItem = new MenuItem();
+            this.themeMenuItem.Header = Properties.Resources.ContextMenuThemeMenuItem;
+            this.Items.Add(this.themeMenuItem);
 
             // Sound
             this.soundMenuItem = new MenuItem();
             this.soundMenuItem.Header = Properties.Resources.ContextMenuSoundMenuItem;
             this.Items.Add(this.soundMenuItem);
 
-            //Separator separator = new Separator();
-            //this.Items.Add(separator);
-
-            //// Advanced options
-            //this.advancedOptionsMenuItem = new MenuItem();
-            //this.advancedOptionsMenuItem.Header = Properties.Resources.ContextMenuAdvancedOptionsMenuItem;
-            //this.Items.Add(this.advancedOptionsMenuItem);
-
-            //// Do not keep computer awake
-            //this.doNotKeepComputerAwakeMenuItem = new MenuItem();
-            //this.doNotKeepComputerAwakeMenuItem.Header = Properties.Resources.ContextMenuDoNotKeepComputerAwakeMenuItem;
-            //this.doNotKeepComputerAwakeMenuItem.IsCheckable = true;
-            //this.doNotKeepComputerAwakeMenuItem.Click += this.CheckableMenuItemClick;
-            //this.advancedOptionsMenuItem.Items.Add(this.doNotKeepComputerAwakeMenuItem);
-
-            //// Open saved timers on startup
-            //this.openSavedTimersOnStartupMenuItem = new MenuItem();
-            //this.openSavedTimersOnStartupMenuItem.Header = Properties.Resources.ContextMenuOpenSavedTimersOnStartupMenuItem;
-            //this.openSavedTimersOnStartupMenuItem.IsCheckable = true;
-            //this.openSavedTimersOnStartupMenuItem.Click += this.CheckableMenuItemClick;
-            //this.advancedOptionsMenuItem.Items.Add(this.openSavedTimersOnStartupMenuItem);
-
-            //// Show time elapsed
-            //this.showTimeElapsedMenuItem = new MenuItem();
-            //this.showTimeElapsedMenuItem.Header = Properties.Resources.ContextMenuShowTimeElapsedMenuItem;
-            //this.showTimeElapsedMenuItem.IsCheckable = true;
-            //this.showTimeElapsedMenuItem.Click += this.CheckableMenuItemClick;
-            //this.advancedOptionsMenuItem.Items.Add(this.showTimeElapsedMenuItem);
-
-            //// Shut down when expired
-            //this.shutDownWhenExpiredMenuItem = new MenuItem();
-            //this.shutDownWhenExpiredMenuItem.Header = Properties.Resources.ContextMenuShutDownWhenExpiredMenuItem;
-            //this.shutDownWhenExpiredMenuItem.IsCheckable = true;
-            //this.shutDownWhenExpiredMenuItem.Click += this.CheckableMenuItemClick;
-            //this.advancedOptionsMenuItem.Items.Add(this.shutDownWhenExpiredMenuItem);
-
-            this.Items.Add(new Separator());
+            Separator separator = new Separator();
+            this.Items.Add(separator);
 
             // About
             this.AboutMenuItem = new MenuItem();
             this.AboutMenuItem.Header = Properties.Resources.ContextMenuAboutMenuItem;
             this.AboutMenuItem.Click += this.AboutMenuItemClick;
             this.Items.Add(this.AboutMenuItem);
-
             this.Items.Add(new Separator());
 
             // Close
@@ -670,7 +420,7 @@ namespace CountdownTimer.Windows
             // Sounds
             this.CreateSoundMenuItem(Sound.NoSound);
             this.CreateSoundMenuItemsFromList(SoundManager.Instance.BuiltInSounds);
-            //this.CreateSoundMenuItemsFromList(SoundManager.Instance.UserProvidedSounds);
+            this.CreateSoundMenuItemsFromList(SoundManager.Instance.UserProvidedSounds);
 
             // Options
             this.soundMenuItem.Items.Add(new Separator());

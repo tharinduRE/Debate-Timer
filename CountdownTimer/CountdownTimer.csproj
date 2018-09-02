@@ -27,6 +27,7 @@
     <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -62,8 +63,11 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>Resources\AppIconV2.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -85,10 +89,9 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Extensions\CultureInfoExtensions.cs" />
     <Compile Include="Extensions\DateTimeExtensions.cs" />
     <Compile Include="Extensions\DayOfWeekExtensions.cs" />
@@ -155,9 +158,6 @@
     <Compile Include="Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Windows\NotificationAreaIcon.cs" />
     <Compile Include="Windows\SoundPlayer.cs" />
     <Compile Include="Windows\WindowSize.cs" />
@@ -204,15 +204,34 @@
     <Resource Include="Resources\header-v1-02.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\AppIconDefault.ico" />
+    <Resource Include="Resources\AppIcon.ico" />
+    <Resource Include="Resources\TrayIcon.ico" />
+    <Resource Include="Resources\about-bg-01.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\DefaultIcon.ico" />
+    <Resource Include="Resources\AppIconV2.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\BeepLoud.wav" />
-    <Content Include="Resources\BeepNormal.wav" />
-    <Content Include="Resources\BeepQuiet.wav" />
+    <Content Include="Resources\BeepLoud.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\DeskBellSound.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\BeepNormal.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\BeepQuiet.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </ApplicationDefinition>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
